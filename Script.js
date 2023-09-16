@@ -8,6 +8,7 @@ let masterPlay=document.getElementById('masterPlay');
 let myProgressBar=document.getElementById('myProgressBar');
 let gif=document.getElementById('gif');
 let songItems=Array.from(document.getElementsByClassName('songItem'));
+let masterSongName=document.getElementById('masterSongName');
 
 let songs=[
     {songName: "Warriyo - Mortals", filePath: "songs/1.mp3", coverPath: "covers/1.jpg"},
@@ -73,8 +74,13 @@ songItemPlay=Array.from(document.getElementsByClassName('songItemPlay'));
 
 
 const makeAllplays=()=>{
-
+    songItemPlay.forEach((element)=>{
+        element.classList.add('fa-play-circle');
+        element.classList.remove('fa-pause-circle');
+    })
 }
+
+
 songItemPlay.forEach((element)=>{
 
     element.addEventListener('click',(e)=>
@@ -83,5 +89,64 @@ songItemPlay.forEach((element)=>{
         makeAllplays()
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
+        gif.style.opacity=1;
+        
+        //To get the ID of indivdual songs
+        songIndex=parseInt(e.target.id);
+
+
+        //To change the song....
+        audioElement.src=`songs/${songIndex}.mp3`;
+        masterSongName.innerText=songs[songIndex-1].songName;
+        audioElement.currentTime=0;
+        audioElement.play();
+
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+        gif.style.opacity=1;
+        
     })
+})
+
+NextButton=document.getElementById('next');
+
+NextButton.addEventListener('click',()=>{
+    if(songIndex>=6)
+    {
+        songIndex=1;
+    }
+
+    else 
+    {
+        songIndex +=1;
+    }
+    audioElement.src=`songs/${songIndex}.mp3`;
+    masterSongName.innerText=songs[songIndex-1].songName;
+    audioElement.currentTime=0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+    gif.style.opacity=1;
+})
+
+previousButton=document.getElementById('previous');
+
+previousButton.addEventListener('click',()=>{
+    if(songIndex<=1)
+    {
+        songIndex=6;
+    }
+
+    else 
+    {
+        songIndex -=1;
+    }
+
+    audioElement.src=`songs/${songIndex}.mp3`;
+    masterSongName.innerText=songs[songIndex-1].songName;
+    audioElement.currentTime=0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+    gif.style.opacity=1;
 })
