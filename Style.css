@@ -20,7 +20,7 @@ nav ul{
     display: flex;
     align-items: center;
     list-style-type: none;
-    height: 65px;
+    height: 50px;
     background-color: black;
     color: white;
     
@@ -61,7 +61,7 @@ nav ul li{
 .bottom
 {
     position: sticky;
-    height: 130px;
+    height: 100px;
     background-color: black;
     color: white;
     bottom: 0;
@@ -128,4 +128,165 @@ nav ul li{
 {
     opacity: 0;
     transition:0.4 ease;
+}
+@media (min-width: 640px) and (max-width: 768px) {
+    .icons i {
+        font-size: 1em; /* Adjust font size for smaller screens */
+        /* margin-top: 1rem; */
+        margin-top: 0.7em;
+    }
+
+    #masterSongName
+    {
+        font-size: 0.7em;
+        margin-left: 10.5rem;
+    }
+
+    .bottom
+    {
+        position: sticky;
+        height: 5rem;
+        background-color: black;
+        color: white;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+
+    .container
+    {
+        min-height: 60vh;
+        /* background-color: black; */
+        color: white;
+        font-family: 'Varela Round',sans-serif;
+        display: flex;
+        margin: 23px auto;
+        width: 80%;
+        border-radius: 12px;
+        padding: 34px;
+        background-image:url('bg.jpg');
+        background-repeat: no-repeat;
+        background-size: 150vh;
+    }
+
+    .container h1
+    {
+        font-size: 1rem;
+        margin-top: -1.5rem;
+    }
+
+
+    .songItem
+    {
+        height: 40px;
+        display: flex;
+        background-color: white;
+        color: black;
+        width: 100%;
+        margin: 19px 0;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 34px;
+    }
+
+    .songItem img{
+        width: 31px;
+        margin:0 23px;
+        border-radius: 34px;
+    }
+}
+
+
+
+@media (min-width: 320px) and (max-width: 580px) {
+    .icons i {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+        /* margin-top: 1rem; */
+        margin-top: 0.8em;
+    }
+
+    #masterSongName
+    {
+        font-size:1em;
+        margin-left: 8rem;
+        margin-top:-3rem;
+    }
+
+    .bottom
+    {
+        position: sticky;
+        height: 5rem;
+        background-color: black;
+        color: white;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+
+    .container
+    {
+        min-height:70vh;
+        height: 75%;
+        /* background-color: black; */
+        color: white;
+        font-family: 'Varela Round',sans-serif;
+        display: flex;
+        margin: 23px auto;
+        width: 75%;
+        border-radius: 12px;
+        padding: 34px;
+        background-image:url('bg.jpg');
+        background-repeat: no-repeat;
+        background-size: 75vh 90vw;
+
+    }
+
+    .container h1
+    {
+        font-size: 1rem;
+        margin-top: -1.5rem;
+    }
+
+
+    .songItem
+    {
+        height: 40px;
+        display: flex;
+        background-color: white;
+        color: black;
+        width: 60%;
+        margin: 37px 0;
+        /* justify-content: space-around; */
+        /* align-items: center; */
+        /* text-align: center; */
+        border-radius: 34px;
+        font-size: 0.7rem;
+    }
+
+    .songItem img{
+        width: 31px;
+        margin:0 23px;
+        border-radius: 34px;
+    }
+
+    .timestamp
+        {
+            margin: 0 23px;
+        }
+
+    .songItemPlay{
+        margin: 0 23px;
+    }
+
+    #myProgressBar{
+        width: 90vw;
+        cursor: pointer;
+    }
+    
 }
